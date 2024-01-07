@@ -1,6 +1,5 @@
 package Patient;
 
-import java.util.Date;
 import java.util.List;
 
 public interface PatientManagerInterface {
@@ -10,9 +9,9 @@ public interface PatientManagerInterface {
     void addPatient(Patient patient);
 
     /**
-     * @param patient patient to remove
+     * @param id id of the patient
      */
-    void removePatient(Patient patient);
+    void removePatientByID(String id);
 
     /**
      * @param id id of the patient
@@ -37,7 +36,7 @@ public interface PatientManagerInterface {
     Patient[] getPatientsByLastName(String lastName);
 
     /**
-     * @param lastName last name of the patient
+     * @param lastName  last name of the patient
      * @param firstName first name of the patient
      * @return all patients with the given last name and first name
      */

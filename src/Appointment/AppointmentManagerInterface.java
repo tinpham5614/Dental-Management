@@ -3,10 +3,16 @@ package Appointment;
 import java.time.LocalDateTime;
 
 public interface AppointmentManagerInterface {
+
+    /**
+     * Displays the schedule
+     */
+    void displaySchedule();
+
     /**
      * @param appointment appointment to add
      */
-    void addAppointment(Appointment appointment);
+    void addAppointment(Appointment appointment, AppointmentTime appointmentTime);
 
     /**
      * @param appointment appointment to remove

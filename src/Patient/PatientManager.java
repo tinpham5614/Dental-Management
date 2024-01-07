@@ -1,11 +1,11 @@
 package Patient;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-public class PatientManager implements PatientManagerInterface{
+public class PatientManager implements PatientManagerInterface {
     private final List<Patient> patientList;
+
     public PatientManager() {
         patientList = new ArrayList<>();
     }
@@ -27,17 +27,14 @@ public class PatientManager implements PatientManagerInterface{
     }
 
     /**
-     * @param patient patient to remove
+     * @param id id of the patient
      */
     @Override
-    public void removePatient(Patient patient) {
-        if (patient == null) {
-            throw new IllegalArgumentException("patient cannot be null");
+    public void removePatientByID(String id) {
+        if (id == null) {
+            throw new IllegalArgumentException("id cannot be null");
         }
-        if (!patientList.contains(patient)) {
-            throw new IllegalArgumentException("patient does not exist");
-        }
-        patientList.remove(patient);
+        patientList.remove(getPatientById(id));
         System.out.println("Patient removed successfully");
     }
 
@@ -62,7 +59,7 @@ public class PatientManager implements PatientManagerInterface{
      */
     @Override
     public Patient getPatientById(String id) {
-        if (id.isEmpty() || id.isBlank()){
+        if (id.isEmpty() || id.isBlank()) {
             throw new IllegalArgumentException("id cannot be null");
         }
         for (Patient patient : patientList) {
@@ -111,7 +108,7 @@ public class PatientManager implements PatientManagerInterface{
         if (firstName.isEmpty() || firstName.isBlank()) {
             throw new IllegalArgumentException("first name cannot be empty or blank");
         }
-        for (Patient patient: patientList) {
+        for (Patient patient : patientList) {
             if (patient.lastName().equals(lastName) && patient.firstName().equals(firstName)) {
                 return new Patient[]{patient};
             }

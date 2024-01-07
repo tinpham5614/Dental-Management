@@ -1,8 +1,10 @@
-package Patient;
+import Patient.Patient;
+import Patient.PatientManager;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class Main {
         System.out.println("All patients: " + patientManager.getPatients() + "\n");
 
         // Remove patient with id 1
-        patientManager.removePatient(patientManager.getPatientById("1"));
+        patientManager.removePatientByID("1");
         // Print all patients
         System.out.println("<----- After removing patient with id 1 ----->");
         System.out.println("All patients: " + patientManager.getPatients() + "\n");
@@ -50,5 +52,13 @@ public class Main {
         // Print all patients with birthday "03/22/1995"
         System.out.println("<----- All patients with birthday \"03/22/1995\" ----->");
         System.out.println("All patients with birthday \"03/22/1995\": " + Arrays.toString(patientManager.getPatientsByBirthday("03/22/1995")) + "\n");
+
+        // Appointment
+//        AppointmentManager appointmentManager = new AppointmentManager();
+//        Appointment appointment = new Appointment("1", patientManager.getPatientById("2"), "1", AppointmentType.FOLLOW_UP, LocalDateTime.from(LocalDateTime.now()), LocalDateTime.now().plusHours(1), 60, "example");
+//        Appointment appointment2 = new Appointment("2", patientManager.getPatientById("3"), "2", AppointmentType.FOLLOW_UP, LocalDateTime.from(LocalDateTime.now()), LocalDateTime.now().plusHours(1), 60, "example");
+//        appointmentManager.addAppointment(appointment);
+//        appointmentManager.addAppointment(appointment2);
+//        appointmentManager.displaySchedule();
     }
 }
