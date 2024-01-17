@@ -1,6 +1,10 @@
+import Appointment.Appointment;
+import Appointment.AppointmentManager;
+import Appointment.AppointmentTime;
+import Appointment.AppointmentType;
 import Patient.Patient;
 import Patient.PatientManager;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,12 +57,12 @@ public class Main {
         System.out.println("<----- All patients with birthday \"03/22/1995\" ----->");
         System.out.println("All patients with birthday \"03/22/1995\": " + Arrays.toString(patientManager.getPatientsByBirthday("03/22/1995")) + "\n");
 
-        // Appointment
-//        AppointmentManager appointmentManager = new AppointmentManager();
-//        Appointment appointment = new Appointment("1", patientManager.getPatientById("2"), "1", AppointmentType.FOLLOW_UP, LocalDateTime.from(LocalDateTime.now()), LocalDateTime.now().plusHours(1), 60, "example");
-//        Appointment appointment2 = new Appointment("2", patientManager.getPatientById("3"), "2", AppointmentType.FOLLOW_UP, LocalDateTime.from(LocalDateTime.now()), LocalDateTime.now().plusHours(1), 60, "example");
-//        appointmentManager.addAppointment(appointment);
-//        appointmentManager.addAppointment(appointment2);
-//        appointmentManager.displaySchedule();
+        // Create initial appointments
+        AppointmentManager appointmentManager = new AppointmentManager();
+        LocalDateTime startTime = LocalDateTime.of(2021, 1, 1, 1, 1);
+        LocalDateTime endTime = LocalDateTime.of(2021, 1, 1, 2, 1);
+        Appointment appointment = new Appointment("1", patientManager.getPatientById("3"), "1", AppointmentType.FOLLOW_UP, new AppointmentTime(startTime, endTime), 60, null);
+        appointmentManager.addAppointment(appointment, new AppointmentTime(startTime, endTime));
+        appointmentManager.displaySchedule();
     }
 }

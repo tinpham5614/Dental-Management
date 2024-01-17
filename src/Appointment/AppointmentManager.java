@@ -31,6 +31,17 @@ public class AppointmentManager implements AppointmentManagerInterface {
         if (appointment == null) {
             throw new IllegalArgumentException("appointment cannot be null");
         }
+        if (schedule.contains(appointment)) {
+            throw new IllegalArgumentException("appointment already exists");
+        }
+        if (appointmentTime == null) {
+            throw new IllegalArgumentException("appointmentTime cannot be null");
+        }
+        for (Appointment existingAppointment : schedule) {
+            if (existingAppointment.appointmentTime().startTime().isBefore(appointmentTime.endTime()) && existingAppointment.appointmentTime().endTime().isAfter(appointmentTime.startTime())) {
+                throw new IllegalArgumentException("Unavailable time slot");
+            }
+        }
         schedule.add(appointment);
         System.out.println("Appointment added successfully");
     }
