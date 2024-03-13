@@ -23,4 +23,4 @@ The system is developed using Java and MySQL database.
 - Enjoy
 
 ## Contributors
-- [Tin Pham](github.com/tinpham5614)
+- [Tin Pham]
