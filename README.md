@@ -1,4 +1,4 @@
-# Dental-Management
+# Dental Management
 This is a dental management system that is used to manage the dental clinic. \
 The system is used to manage the patients, appointments, and the dental staff. \
 The system is developed using Java and MySQL database.
@@ -23,4 +23,4 @@ The system is developed using Java and MySQL database.
 - Enjoy
 
 ## Contributors
-- [Tin Pham](tinp.netlify.app)
+- [Tin Pham](github.com/tinpham5614)
